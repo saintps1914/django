@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to the Brobas Control Panel!</h1>
+    <div class="button-container">
+        <a href="{% url 'new_data' %}">
+            <input type="submit" class="submitBtn" value="Add a new customer to the database">
+        </a>
+        <a href="{% url 'prompts' %}">
+            <input type="submit" class="submitBtn" value="I want to use prompts during the dialogue with the new customer">
+        </a>
+    {#    <a href="{% url 'new_customer' %}">#}
+            <input type="submit" class="submitBtn" value="Calculate the probability of approval coefficient">
+        </a>
+    {#    <a href="{% url 'new_customer' %}">#}
+            <input type="submit" class="submitBtn" value="Check the customer database">
+        </a>
+    {#    <a href="{% url 'new_customer' %}">#}
+            <input type="submit" class="submitBtn" value="I want to submit a our customer to the bank">
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    {{ block.super }}
+    <!-- Дополнительный контент для подвала -->
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container" style="max-width: 500px; text-align: center;">
+        <h2>Please enter your login information</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div style="font-family: Arial, sans-serif; margin-bottom: 30px;text-align: center;">
+                {{ form.username.label_tag }}
+                {{ form.username }}
+            </div>
+            <div style="font-family: Arial, sans-serif; margin-bottom: 30px;text-align: center;">
+                {{ form.password.label_tag }}
+                {{ form.password }}
+            </div>
+            <div style="text-align: center;">
+                <input type="submit" value="Sign in">
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ block.super }}
+    <!-- Дополнительный контент для подвала -->
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>You can create the customer's data here</h1>
+    <div class="container">
+        <form action="{% url 'new_data' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-container">
+              <div class="column">
+
+                    <label for="data1">First name:</label>
+                    <input type="text" id="data1" name="data1"><br>
+
+                    <label for="data1">Last name:</label>
+                    <input type="text" id="data2" name="data2"><br>
+
+                    <label for="data1">Date of birth:</label>
+                    <input type="text" id="data3" name="data3"><br>
+
+                    <label for="data1">SSN:</label>
+                    <input type="text" id="data4" name="data4"><br>
+
+                    <label for="data1">Phone number:</label>
+                    <input type="text" id="data5" name="data5"><br>
+
+                    <label for="data1">Email:</label>
+                    <input type="text" id="data6" name="data6"><br>
+
+                    <label for="data1">Address:</label>
+                    <input type="text" id="data7" name="data7"><br>
+
+                    <label for="data1">City:</label>
+                    <input type="text" id="data8" name="data8"><br>
+
+                    <label for="data1">State:</label>
+                    <input type="text" id="data14" name="data14"><br>
+
+                    <label for="data1">ZIP:</label>
+                    <input type="text" id="data15" name="data15"><br>
+              </div>
+
+                <div class="column">
+                    <label for="data1">Company name:</label>
+                    <input type="text" id="data9" name="data9"><br>
+
+                    <label for="data1">Company address:</label>
+                    <input type="text" id="data10" name="data10"><br>
+
+                    <label for="data1">City:</label>
+                    <input type="text" id="data11" name="data11"><br>
+
+                    <label for="data1">State:</label>
+                    <input type="text" id="data16" name="data16"><br>
+
+                    <label for="data1">ZIP:</label>
+                    <input type="text" id="data17" name="data17"><br>
+
+                    <label for="data1">EIN:</label>
+                    <input type="text" id="data12" name="data12"><br>
+
+                    <label for="data1">Date of incorporation:</label>
+                    <input type="text" id="data13" name="data13"><br>
+                </div>
+            </div>
+
+                <!-- Добавьте дополнительные поля по аналогии -->
+
+            <script>
+            function createData() {
+                // Отправляем POST-запрос на создание файла данных
+                fetch('/new_data/', {
+                    method: 'POST',
+                    body: new FormData(),
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}'  // Вставьте токен CSRF здесь
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Если запрос успешен, меняем цвет кнопки на зеленый
+                        document.getElementById('submitBtn').style.backgroundColor = 'lightgreen';
+                        // Ждем 1 секунду перед переходом на другую страницу
+                        setTimeout(function() {
+                            window.location.href = '/index/';  // Редирект на страницу index
+                        }, 1000);
+                    } else {
+                        console.error('Ошибка при создании файла данных:', response.statusText);
+                    }
+                })
+                .catch(error => console.error('Ошибка при создании файла данных:', error));
+            }
+            </script>
+            
+            <!-- HTML-код кнопки для создания данных -->
+            <input type="submit" id="submitBtn" value="Create the data" onclick="createData()">
+
+
+        </form>
+    </div>
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+    {{ block.super }}
+    <!-- Дополнительный контент для подвала -->
+{% endblock %}

@@ -1,0 +1,146 @@
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 20px;
+
+
+}
+
+.logo {
+    flex-grow: 1; /* Логотип растягивается на доступное пространство */
+    text-align: center; /* Центрирование логотипа */
+}
+
+.logo img {
+    display: inline-block;
+    width: 300px;
+}
+
+.logout-btn button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #333; /* Цвет текста */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+    display: flex;
+}
+
+.column {
+    flex: 1;
+    padding: 0 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+form {
+    text-align: left;
+    padding-left: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 3px;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 5px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+input[type="password"] {
+    width: 300px;
+    padding: 5px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"],
+.styled-button {
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 350px;
+}
+
+.styled-button:hover,
+input[type="submit"]:hover {
+    background-color: #999;
+}
+
+.styled-button a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.result {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 24px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+.footer-text {
+    color: #888; /* серый цвет текста */
+    text-align: center; /* выравнивание по центру */
+    padding: 10px 0; /* отступ сверху и снизу для выравнивания */
+}
+
+.footer-line {
+    width: 100%; /* ширина линии на всю ширину экрана */
+    height: 1px; /* толщина линии */
+    background: linear-gradient(to right, transparent, #888, transparent); /* градиентный фон */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submitBtn {
+    width: 500px !important;
+    margin-bottom: 10px;
+}
